@@ -51,6 +51,11 @@ class VisaService(models.Model):
     processing_time = models.IntegerField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
     is_featured = models.BooleanField(default=False)
+    booking = models.JSONField(null=True, blank=True)
 
     def __str__(self):
         return self.title
+
+    def book_service(self, booking_info):
+        self.booking = booking_info
+        self.save()

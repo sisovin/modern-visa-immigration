@@ -23,6 +23,15 @@ class VisaServiceModelTest(TestCase):
         self.assertEqual(self.visa_service.price, 100.00)
         self.assertTrue(self.visa_service.is_featured)
 
+    def test_visa_service_booking(self):
+        booking_info = {
+            "customer_name": "John Doe",
+            "booking_date": "2023-01-01",
+            "status": "confirmed"
+        }
+        self.visa_service.book_service(booking_info)
+        self.assertEqual(self.visa_service.booking, booking_info)
+
 class VisaServiceSerializerTest(TestCase):
     def setUp(self):
         self.visa_service_attributes = {
@@ -48,7 +57,7 @@ class VisaServiceSerializerTest(TestCase):
 
     def test_contains_expected_fields(self):
         data = self.serializer.data
-        self.assertEqual(set(data.keys()), set(['id', 'title', 'description', 'requirements', 'processing_time', 'price', 'is_featured']))
+        self.assertEqual(set(data.keys()), set(['id', 'title', 'description', 'requirements', 'processing_time', 'price', 'is_featured', 'booking']))
 
     def test_title_field_content(self):
         data = self.serializer.data

@@ -22,7 +22,7 @@ const testimonials = [
   },
 ];
 
-const TestimonialSlider = () => {
+const TestimonialSlider = ({ booking }) => {
   return (
     <div className="testimonial-slider">
       {testimonials.map((testimonial, index) => (
@@ -32,6 +32,7 @@ const TestimonialSlider = () => {
           clientPhoto={testimonial.clientPhoto}
           quote={testimonial.quote}
           companyInfo={testimonial.companyInfo}
+          booking={booking}
         />
       ))}
     </div>
