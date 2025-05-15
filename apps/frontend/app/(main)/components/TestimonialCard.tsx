@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TestimonialCard = ({ rating, clientPhoto, quote, companyInfo }) => {
+const TestimonialCard = ({ rating, clientPhoto, quote, companyInfo, booking }) => {
   return (
     <div className="testimonial-card p-4 border rounded shadow-lg">
       <div className="flex items-center mb-4">
@@ -22,6 +22,14 @@ const TestimonialCard = ({ rating, clientPhoto, quote, companyInfo }) => {
         </div>
       </div>
       <p className="text-gray-800 italic">"{quote}"</p>
+      {booking && (
+        <div className="booking-info mt-4 p-2 border-t">
+          <h3 className="text-lg font-bold">Booking Information</h3>
+          <p>Customer Name: {booking.customerName}</p>
+          <p>Booking Date: {booking.bookingDate}</p>
+          <p>Status: {booking.status}</p>
+        </div>
+      )}
     </div>
   );
 };
