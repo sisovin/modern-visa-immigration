@@ -1,29 +1,18 @@
-:root {
-  --primary-color: #3498db;
-  --secondary-color: #2ecc71;
-  --font-size-base: 16px;
-  --font-size-lg: 1.25rem;
-  --font-size-sm: 0.875rem;
-}
-
 body {
   font-family: Arial, sans-serif;
-  font-size: var(--font-size-base);
-  color: var(--primary-color);
 }
 
 h1 {
   font-size: 2rem;
-  color: var(--secondary-color);
+  color: #2ecc71;
 }
 
 h2 {
   font-size: 1.5rem;
-  color: var(--secondary-color);
+  color: #2ecc71;
 }
 
 p {
-  font-size: var(--font-size-base);
   line-height: 1.5;
 }
 
@@ -35,7 +24,7 @@ p {
 
 @media (max-width: 768px) {
   body {
-    font-size: var(--font-size-sm);
+    font-size: 0.875rem;
   }
 
   h1 {
@@ -53,7 +42,7 @@ p {
 
 @media (min-width: 769px) and (max-width: 1024px) {
   body {
-    font-size: var(--font-size-base);
+    font-size: 1rem;
   }
 
   h1 {
@@ -71,7 +60,7 @@ p {
 
 @media (min-width: 1025px) {
   body {
-    font-size: var(--font-size-lg);
+    font-size: 1.25rem;
   }
 
   h1 {
@@ -118,6 +107,11 @@ p {
   border: 1px solid #ddd;
   border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
 }
 
 .service-card h3 {
@@ -148,4 +142,40 @@ p {
 
 .testimonial-slider .slide.opacity-100 {
   opacity: 1;
+}
+
+/* Button Hover Effects */
+@keyframes buttonHover {
+  0% {
+    background-color: #3498db;
+    transform: scale(1);
+  }
+  50% {
+    background-color: #2980b9;
+    transform: scale(1.05);
+  }
+  100% {
+    background-color: #3498db;
+    transform: scale(1);
+  }
+}
+
+button:hover {
+  animation: buttonHover 0.5s ease-in-out;
+}
+
+/* Modal Appearances */
+@keyframes modalAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal {
+  animation: modalAppear 0.5s ease-in-out;
 }
