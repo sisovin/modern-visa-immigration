@@ -1,0 +1,88 @@
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --font-size-base: 16px;
+  --font-size-lg: 1.25rem;
+  --font-size-sm: 0.875rem;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: var(--font-size-base);
+  color: var(--primary-color);
+}
+
+h1 {
+  font-size: 2rem;
+  color: var(--secondary-color);
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+}
+
+p {
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: var(--font-size-sm);
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    font-size: var(--font-size-base);
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+}
+
+@media (min-width: 1025px) {
+  body {
+    font-size: var(--font-size-lg);
+  }
+
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .container {
+    padding: 0 30px;
+  }
+}
