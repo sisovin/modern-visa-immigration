@@ -43,3 +43,14 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.username
+
+class VisaService(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    requirements = models.TextField()
+    processing_time = models.IntegerField()
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    is_featured = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.title
