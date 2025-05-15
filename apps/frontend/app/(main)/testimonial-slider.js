@@ -1,30 +1,41 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const slider = document.querySelector('.testimonial-slider');
-  const slides = slider.querySelectorAll('.slide');
-  let currentIndex = 0;
-  let interval;
+import React from 'react';
+import TestimonialCard from './components/TestimonialCard';
 
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.toggle('opacity-100', i === index);
-      slide.classList.toggle('opacity-0', i !== index);
-    });
-  }
+const testimonials = [
+  {
+    rating: 5,
+    clientPhoto: 'path/to/photo1.jpg',
+    quote: 'This service is amazing!',
+    companyInfo: 'Company A',
+  },
+  {
+    rating: 4,
+    clientPhoto: 'path/to/photo2.jpg',
+    quote: 'Very satisfied with the service.',
+    companyInfo: 'Company B',
+  },
+  {
+    rating: 5,
+    clientPhoto: 'path/to/photo3.jpg',
+    quote: 'Highly recommend!',
+    companyInfo: 'Company C',
+  },
+];
 
-  function startSlider() {
-    interval = setInterval(() => {
-      currentIndex = (currentIndex + 1) % slides.length;
-      showSlide(currentIndex);
-    }, 3000);
-  }
+const TestimonialSlider = () => {
+  return (
+    <div className="testimonial-slider">
+      {testimonials.map((testimonial, index) => (
+        <TestimonialCard
+          key={index}
+          rating={testimonial.rating}
+          clientPhoto={testimonial.clientPhoto}
+          quote={testimonial.quote}
+          companyInfo={testimonial.companyInfo}
+        />
+      ))}
+    </div>
+  );
+};
 
-  function stopSlider() {
-    clearInterval(interval);
-  }
-
-  slider.addEventListener('mouseenter', stopSlider);
-  slider.addEventListener('mouseleave', startSlider);
-
-  showSlide(currentIndex);
-  startSlider();
-});
+export default TestimonialSlider;
