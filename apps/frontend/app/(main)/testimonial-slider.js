@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function showSlide(index) {
     slides.forEach((slide, i) => {
-      slide.style.opacity = i === index ? '1' : '0';
+      slide.classList.toggle('opacity-100', i === index);
+      slide.classList.toggle('opacity-0', i !== index);
     });
   }
 

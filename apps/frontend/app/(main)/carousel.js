@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function showImage(index) {
     images.forEach((img, i) => {
-      img.style.opacity = i === index ? '1' : '0';
+      img.classList.toggle('opacity-100', i === index);
+      img.classList.toggle('opacity-0', i !== index);
     });
   }
 
