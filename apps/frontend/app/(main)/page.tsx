@@ -1,10 +1,12 @@
 import React from 'react';
 import Carousel from './carousel';
 import TestimonialSlider from './testimonial-slider';
+import StickyHeader from './components/StickyHeader';
 
 const HomePage = () => {
   return (
     <div className="container mx-auto p-4">
+      <StickyHeader />
       <h1 className="text-4xl font-bold text-center">Welcome to the Modern Visa and Immigration Management System</h1>
       <p className="text-center mt-4">Manage your visa applications and immigration status with ease.</p>
       
