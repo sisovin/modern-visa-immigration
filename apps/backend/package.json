@@ -1,0 +1,15 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "python manage.py runserver",
+    "build": "echo 'No build step for Django backend'",
+    "start": "python manage.py runserver"
+  },
+  "dependencies": {
+    "django": "^3.2.7",
+    "djangorestframework": "^3.12.4",
+    "django-cors-headers": "^3.7.0"
+  }
+}
